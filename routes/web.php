@@ -14,3 +14,14 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::resources([
+   'categories' => 'CategoryController',
+   'posts'      => 'PostController',
+]);
+
+Route::post('comment', 'CommentController@store')
+    ->name('comment.store');
+
+Route::get('/posts/{post}/download', 'PostController@downloadFile')
+    ->name('post.file.download');

@@ -93,7 +93,24 @@
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-throw new Error("Module build failed (from ./node_modules/babel-loader/lib/index.js):\nError: ENOENT: no such file or directory, open '/app/resources/js/comment.js'");
+document.getElementById('comment').addEventListener('click', function () {
+  var author = document.getElementById('author').value;
+  var content = document.getElementById('content').value;
+  var post_id = document.getElementById('post_id').value;
+  $.ajax({
+    type: "POST",
+    url: "/comment",
+    data: {
+      author: author,
+      content: content,
+      post_id: post_id
+    }
+  }).done(function (data) {
+    location.reload();
+  }).fail(function (error) {
+    alert(error.responseText);
+  });
+});
 
 /***/ }),
 
