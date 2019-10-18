@@ -27,7 +27,7 @@ class PostUpdateRequest extends FormRequest
             'name'        => 'required|max:255',
             'content'     => 'required',
             'category_id' => 'required',
-            'file'        => 'nullable|max:128',
+            'file'        => 'nullable|max:2048',
         ];
     }
 }

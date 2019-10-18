@@ -26,7 +26,7 @@ class PostStoreRequest extends FormRequest
         return [
             'name'    => 'required|max:255',
             'content' => 'required',
-            'file'    => 'nullable|max:128',
+            'file'    => 'nullable|max:2048',
         ];
     }
 }
