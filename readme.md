@@ -7,7 +7,8 @@ MMG-BLOG Install
 5. chmod 777 -R storage/
 6. sudo chmod 777 -R bootstrap/cache/
 7. docker-compose exec php php artisan migrate
-8. docker-compose run --rm node npm run watch
+8. docker-compose exec php php artisan db:seed
+9. docker-compose run --rm node npm run watch
 
 
 
