@@ -25,3 +25,6 @@ Route::post('comment', 'CommentController@store')
 
 Route::get('/posts/{post}/download', 'PostController@downloadFile')
     ->name('post.file.download');
+
+Route::get('/statistics', 'StatisticController@visits')
+    ->name('statistics');

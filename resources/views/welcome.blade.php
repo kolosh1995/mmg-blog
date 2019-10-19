@@ -88,6 +88,7 @@
                     <a href="{{route('posts.index')}}">Posts</a>
                     <a href="{{route('categories.create')}}">Create Category</a>
                     <a href="{{route('posts.create')}}">Create Post</a>
+                    <a href="{{route('statistics')}}">Statistics</a>
                 </div>
             </div>
         </div>
