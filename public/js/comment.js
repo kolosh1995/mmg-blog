@@ -96,14 +96,16 @@
 document.getElementById('comment').addEventListener('click', function () {
   var author = document.getElementById('author').value;
   var content = document.getElementById('content').value;
-  var post_id = document.getElementById('post_id').value;
+  var commentable_id = document.getElementById('commentable_id').value;
+  var commentable_type = document.getElementById('commentable_type').value;
   $.ajax({
     type: "POST",
     url: "/comment",
     data: {
       author: author,
       content: content,
-      post_id: post_id
+      commentable_id: commentable_id,
+      commentable_type: commentable_type
     }
   }).done(function (data) {
     location.reload();
