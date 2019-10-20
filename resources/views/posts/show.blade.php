@@ -36,7 +36,8 @@
         <input type="text" class="form-control" id="author" name="author" required>
         <label for="content">Content</label>
         <input type="text" class="form-control" id="content" name="content" required>
-        <input type="hidden" id="post_id" name="post_id" value="{{$post->getKey()}}">
+        <input type="hidden" id="commentable_id" name="commentable_id" value="{{$post->getKey()}}">
+        <input type="hidden" id="commentable_type" name="commentable_type" value="{{\App\Post::class}}">
         <button class="btn btn-primary" type="submit" id="comment">OK</button>
     </div>
 @endsection

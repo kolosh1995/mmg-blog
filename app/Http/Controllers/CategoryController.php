@@ -59,11 +59,13 @@ class CategoryController extends Controller
      */
     public function show(Category $category)
     {
-        $posts = $category->posts;
+        $posts    = $category->posts()->paginate(4);
+        $comments = $category->comments;
 
         return view('categories.show', [
             'category' => $category,
             'posts'    => $posts,
+            'comments' => $comments,
         ]);
     }
 
@@ -87,13 +89,7 @@ class CategoryController extends Controller
      */
     public function update(CategoryUpdateRequest $request, Category $category)
     {
-        $name        = $request->get('name');
-        $description = $request->get('description');
-
-        $category->update([
-            'name'        => $name,
-            'description' => $description,
-        ]);
+        $category->update($request->only(['name', 'description']));
 
         return view('categories.show', ['category' => $category]);
     }

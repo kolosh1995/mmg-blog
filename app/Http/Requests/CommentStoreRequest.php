@@ -24,9 +24,10 @@ class CommentStoreRequest extends FormRequest
     public function rules()
     {
         return [
-            'author'  => 'regex:/^\p{Lu}\p{Ll}+ \p{Lu}\p{Ll}+$/',
-            'content' => 'required',
-            'post_id' => 'required',
+            'author'           => 'regex:/^\p{Lu}\p{Ll}+ \p{Lu}\p{Ll}+$/',
+            'content'          => 'required',
+            'commentable_id'   => 'required',
+            'commentable_type' => 'required',
         ];
     }
 }

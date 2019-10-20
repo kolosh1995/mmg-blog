@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Comment;
 use App\Http\Requests\CommentStoreRequest;
-use Illuminate\Http\Request;
 
 class CommentController extends Controller
 {
@@ -14,14 +13,16 @@ class CommentController extends Controller
      */
     public function store(CommentStoreRequest $request)
     {
-        $author  = $request->get('author');
-        $content = $request->get('content');
-        $post_id = $request->get('post_id');
+        $author           = $request->get('author');
+        $content          = $request->get('content');
+        $commentable_id   = $request->get('commentable_id');
+        $commentable_type = $request->get('commentable_type');
 
         $comment = new Comment([
-            'author'  => $author,
-            'content' => $content,
-            'post_id' => $post_id,
+            'author'           => $author,
+            'content'          => $content,
+            'commentable_id'   => $commentable_id,
+            'commentable_type' => $commentable_type,
         ]);
 
         $comment->save();

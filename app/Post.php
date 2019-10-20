@@ -30,11 +30,11 @@ class Post extends Model
     }
 
     /**
-     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     * @return \Illuminate\Database\Eloquent\Relations\MorphMany
      */
     public function comments()
     {
-        return $this->hasMany(Comment::class);
+        return $this->morphMany('App\Comment', 'commentable');
     }
 
     /**
